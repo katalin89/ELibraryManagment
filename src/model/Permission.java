@@ -1,0 +1,71 @@
+package model;
+
+public class Permission {
+    private int id;
+    private int roleId;
+    private String title;
+    private String module;
+    private String description;
+
+    public  Permission(int id,int roleId,String title,String module,String deccription){
+        this.id=id;
+        this.roleId=roleId;
+        this.title=title;
+        this.module=module;
+        this.description=deccription;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public void setModule(String module) {
+        this.module = module;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public  String toString(){
+        String text="";
+        text+=id+","+roleId+","+title+","+module+","+description;
+        return  text;
+    }
+
+    @Override
+    public  boolean equals(Object obj){
+        Permission permission=(Permission) obj;
+        return  permission.title.equals(this.title);
+    }
+
+}
