@@ -17,7 +17,7 @@ class RepositoryBookTest  {
         @Test
         public void stergeById(){
             RepositoryBook repositoryBook = new RepositoryBook();
-           repositoryBook.stergeBookById(1);
+           repositoryBook.stergeBookById(5);
 
         }
 
@@ -26,12 +26,12 @@ class RepositoryBookTest  {
         @Test
         public void updatePrice () {
             RepositoryBook repositoryBook = new RepositoryBook();
-            repositoryBook.updatePrice(1, 19990);
+            repositoryBook.updatePrice(2, 19990);
         }
-
+@Test
         public void deleteNume () {
             RepositoryBook repositoryBook = new RepositoryBook();
-            repositoryBook.deleteNume("ceva");
+            repositoryBook.deleteNume("Informatica");
         }
 
         @Test

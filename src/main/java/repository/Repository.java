@@ -28,6 +28,7 @@ public  abstract class Repository {
             statement.execute(execute);
         } catch (SQLException exec) {
             System.out.println("Nu am reusit" + execute);
+            System.out.println(execute);
         }
     }
 

@@ -7,12 +7,12 @@ public class Permission {
     private String module;
     private String description;
 
-    public  Permission(int id,int roleId,String title,String module,String deccription){
+    public  Permission(int id,int roleId,String title,String module,String description){
         this.id=id;
         this.roleId=roleId;
         this.title=title;
         this.module=module;
-        this.description=deccription;
+        this.description=description;
     }
 
     public int getId() {
