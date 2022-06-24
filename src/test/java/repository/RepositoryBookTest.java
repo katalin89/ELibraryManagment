@@ -1,13 +1,11 @@
-package reposiory;
+package repository;
 
 import model.Book;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class RepositoryBookTest {
+class RepositoryBookTest  {
     @Test
     public  void insert() {
         RepositoryBook repositoryBook = new RepositoryBook();

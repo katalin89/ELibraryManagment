@@ -1,10 +1,9 @@
-package reposiory;
+package repository;
 
 
 import exceptions.BookFoundException;
 import exceptions.BookNotFoundException;
 import model.Book;
-import reposiory.Repository;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class RepositoryBook extends Repository {
 
-    private String insertTo;
+
 
     public RepositoryBook() {
         super();
