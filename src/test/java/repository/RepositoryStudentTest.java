@@ -42,4 +42,11 @@ class RepositoryStudentTest {
 
     }
 
+    @Test
+    public  void getStudent(){
+        RepositoryStudent repositoryStudent = new RepositoryStudent();
+        System.out.println(repositoryStudent.getStudentById(1).toString());
+
+    }
+
 }

@@ -55,4 +55,52 @@ public class RepositoryStudent extends  Repository{
         }
         return  students;
     }
+
+    public Student getStudentById(int id){
+        String login=String.format("select * from student where id=%d",id);
+        executeStatement(login);
+        try{
+            ResultSet result= statement.getResultSet();
+            if (result!=null){
+                result.next();
+                return  new Student(result.getInt(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6),
+                        result.getString(7),
+                result.getInt(8));
+            }else  return  null;
+        }catch (Exception e){
+            System.out.println("Nu s-a executat schita");
+            return  null;
+        }
+    }
+
+
+    public  Student login(String username,String password){
+        String login=String .format("select * from student where username='%s'and password='%s'",username,password);
+        executeStatement(login);
+        try{
+            ResultSet result=statement.getResultSet();
+            if(result!=null){
+                result.next();
+                return  new Student(result.getInt(1),
+                result.getString(2),
+                result.getString(3),
+                result.getString(4),
+                result.getString(5),
+                result.getString(6),
+                result.getString(7),
+                result.getInt(8));
+
+
+
+            }else return  null;
+        }catch (Exception e){
+            System.out.println("Nu s-a executat schita");
+            return  null;
+        }
+    }
 }
