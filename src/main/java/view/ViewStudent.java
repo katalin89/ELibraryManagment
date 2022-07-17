@@ -1,9 +1,11 @@
 package view;
 
+import model.Course;
 import model.Student;
 import repository.RepositoryCourse;
 import repository.RepositoryStudent;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static view.View.repositoryCourse;
@@ -34,26 +36,48 @@ public class ViewStudent {
             }
         }
     }
-
+//    public  Student(int id,String name,String mobile,String email,String address,String username,String password,int collegeId){
     public void afisareCursuri() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduceti id");
         String i = scanner.nextLine();
         int id = Integer.parseInt(i);
-        System.out.println("Introduceti studentID");
-        String studId = scanner.nextLine();
-        int studentId = Integer.parseInt(studId);
-        System.out.println("Introduceti type");
-        String type = scanner.nextLine();
-        System.out.println("Introduceti description");
-        String description = scanner.nextLine();
-        System.out.println("Introduceti year");
-        String year = scanner.nextLine();
-        System.out.println("Logare");
+        System.out.println("Introduceti name");
+        String name = scanner.nextLine();
+        System.out.println("Introduceti mobile");
+        String mobild = scanner.nextLine();
+        System.out.println("Introduceti email");
+        String email = scanner.nextLine();
+        System.out.println("Introduceti address");
+        String address = scanner.nextLine();
+        System.out.println("Introduceti username");
+        String username=scanner.nextLine();
+        System.out.println("Introduceti password");
+        String  password= scanner.nextLine();
+        System.out.println("Introduceti collageId");
+        int collegeId=Integer.parseInt(scanner.nextLine());
 
-        repositoryCourse.allCourses();
+       List<Course>cursuri= repositoryCourse.allCourses();
+       for(Course c:cursuri){
+           System.out.println(c.toString());
+       }
+
+
 
     }
+
+    public  void cursurileStudentului(){
+        System.out.println("Are urmatoarele cursuri");
+
+    }
+
+    /* public void cursurileStudentului() {
+        System.out.println("Sunti inscris la cursurile");
+        ArrayList<Enrolment> studentEnrolments = controllerEnrolment.returnLista(this.persoana.getId());
+        for (Enrolment enrolment : studentEnrolments) {
+            System.out.println(controllerCurs.returnCurs(enrolment.getCourseId()).descriere());
+        }
+    }*/
 }
 
 

@@ -56,6 +56,22 @@ public class RepositoryCourse extends Repository {
         return courses;
     }
 
+    public List<Course>allCoursesById(){
+        ResultSet set = allCourse();
+        List<Course> courses = new ArrayList<>();
+        try {
+            while (set.next()) {
+                courses.add(new Course(set.getInt(1), set.getInt(2), set.getString(3), set.getString(4),set.getString(5)));
+            }
+
+        } catch (Exception e) {
+            System.out.println("Nu s-a creat lista");
+        }
+        return courses;
+    }
+
+}
+
     private ResultSet returnCursType(String type) {
         executeStatement(String.format(" select  *  from  course  where  type = '%s'", type));
         try {
